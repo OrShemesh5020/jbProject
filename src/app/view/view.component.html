@@ -1,0 +1,26 @@
+<div class="galleryComponent">
+  <div
+    class="galleryElement"
+    *ngFor="let galleryElement of galleryElements"
+    (click)="selectedElement(galleryElement)"
+  >
+    <app-image-component
+      *ngIf="galleryElement.galleryElementType === galleryElementType.IMAGE"
+      [imageElement]="galleryElement"
+    ></app-image-component>
+    <app-video-component
+      *ngIf="galleryElement.galleryElementType === galleryElementType.VIDEO"
+      [videoElement]="galleryElement"
+    ></app-video-component>
+  </div>
+</div>
+<div>
+  <app-preview-component
+    *ngIf="selectedGalleryElement"
+    [previewGalleryElement]="selectedGalleryElement"
+    [galleryElementIndex]="selectedGalleryElement.id"
+    [previewGalleryElements]="galleryElements"
+    (closePreview)="closePreview()"
+  >
+  </app-preview-component>
+</div>

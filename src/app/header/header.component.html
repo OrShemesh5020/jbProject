@@ -1,0 +1,7 @@
+<header class="navigation-bar">
+  <ul>
+    <li *ngFor="let item of headerItems" [routerLink]="item.navigation">
+      {{ item.title }}
+    </li>
+  </ul>
+</header>

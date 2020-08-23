@@ -1,0 +1,72 @@
+<!-- <input [(ngModel)]="name" placeholder="Full name" /> -->
+<div class="Form">
+  <div class="formatfile">
+    <span>Full name:</span>
+    <input type="text" [(ngModel)]="name" />
+  </div>
+  <div class="formatfile">
+    <span>Mail:</span>
+    <input type="text"  [(ngModel)]="email"/>
+  </div>
+  <div  class="formatfile">
+    <span>Age: </span>
+    <select [(ngModel)]="age">
+      <option>20</option>
+      <option>21</option>
+      <option>22</option>
+      <option>23</option>
+    </select>
+  </div>
+  <div class="formatfile">
+    <span>number:</span>
+    <input type="text"  [(ngModel)]="phone" />
+  </div>
+  <div class="formatfile">
+    <span>Address:</span>
+    <input type="text"  [(ngModel)]="address" />
+  </div>
+  <div class="formatfile">
+    <span>Average grades:</span>
+    <input type="number" min="20" max="100" [(ngModel)]="avgGrades" />
+  </div>
+  <button (click)="addStudent()">add student</button>
+</div>
+<div class="tableFream">
+  <select #selectedFilter (change)="filter(selectedFilter)">
+    <option value="all">all students</option>
+    <option value="id_1-6">id between 1-6</option>
+    <option value="age_>_30">age is bigger than 30</option>
+    <option value="avgGrades_>_90">avg grades over 90</option>
+    <option value="avgGrades_>_95">avg grades over 95</option>
+    <option value="phone_ends_with_4">phone number ends with 4</option>
+    <option value="name_start_with_B">name starts with b</option>
+    <option value="last_name_start_with_S">last name starts with s</option>
+  </select>
+  <br />
+  <br />
+  <div class="totalAvg">
+    Average filtered student grades:
+    {{ avgFilteredStudentGrades | number: "1.0-2" }}
+  </div>
+  <br />
+  <table>
+    <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>age</th>
+      <th>email</th>
+      <th>phone</th>
+      <th>address</th>
+      <th>avg grades</th>
+    </thead>
+    <tr *ngFor="let student of studentsListFilter">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.phone }}</td>
+      <td>{{ student.address }}</td>
+      <td>{{ student.avgGrades }}</td>
+    </tr>
+  </table>
+</div>

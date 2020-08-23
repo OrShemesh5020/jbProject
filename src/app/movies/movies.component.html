@@ -1,0 +1,30 @@
+<ol>
+  <li *ngFor="let movie of movieList; let i = index" (click)="setMovie(i)">
+    {{ movie.movieName }}
+  </li>
+</ol>
+<br />
+<br />
+<div *ngIf="selectedMovie" (click)="unsetMovie()">
+  <div id="tableTitle">
+    <label>selected movie: {{ selectedMovie.movieName }}</label>
+  </div>
+  <br />
+  <table>
+    <thead>
+      <th>Country</th>
+      <th>Price</th>
+      <th>Date</th>
+    </thead>
+    <tr>
+      <td>USA</td>
+      <td>{{ moviePrice | currency: "USD":"symbol":"1.2-2" }}</td>
+      <td>{{ selectedMovie.movieDate | date: "M/d/y" }}</td>
+    </tr>
+    <tr>
+      <td>Israel</td>
+      <td>{{ moviePrice * 4 | currency: "ILS":"symbol":"1.2-2" }}</td>
+      <td>{{ selectedMovie.movieDate | date: "d/M/y" }}</td>
+    </tr>
+  </table>
+</div>

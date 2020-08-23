@@ -1,3 +1,4 @@
+import { DummyService } from './service/dummy.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'jbProject';
+  title = 'or ';
+  constructor(public dummyService: DummyService){}
 }

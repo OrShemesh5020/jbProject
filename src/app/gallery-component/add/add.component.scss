@@ -1,0 +1,34 @@
+.add-form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+}
+
+.preview-element {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 20vw;
+  height: 20vh;
+  top: 0;
+  // z-index: 1;
+  // display: table;
+  // table-layout: fixed;
+  // justify-content: center;
+  img {
+
+    // top: 0;
+    // border: solid black 10px;
+    // // height: auto;
+    // height: max-content;
+    // width: max-content;
+    // // margin: auto;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    // // z-index: 1;
+    max-width: 200px;
+    width: inherit;
+    height: inherit;
+  }
+}

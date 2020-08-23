@@ -1,0 +1,10 @@
+<div class="videoComponent">
+  <video controls>
+    <source src="{{ videoElement.src }}" type="video/mp4" />
+  </video>
+<div class="text-block">
+  <div>{{ videoElement.title }}</div>
+  <div>{{ videoElement.description }}</div>
+  <div>created on: {{ videoElement.createdOn | date: " EEEE MMMM yyyy" }}</div>
+</div>
+</div>

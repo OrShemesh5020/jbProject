@@ -1,0 +1,34 @@
+<h1>update element</h1>
+<form (ngSubmit)="onSubmit()" #imageAddForm="ngForm">
+  <label>Title: </label>
+  <input
+    name="title"
+    required
+    minlength="3"
+    maxlength="15"
+    [(ngModel)]="model.title"
+    #title="ngModel"
+  />
+  <div *ngIf="!title.valid && title.touched && title.errors.required">
+    Title is required
+  </div>
+  <div *ngIf="!title.valid && title.errors.minlength">
+    Title must be with min length of 3 chars
+  </div>
+  <br />
+  <br />
+  <label>description</label>
+  <textarea
+    name="description"
+    minlength="8"
+    maxlength="50"
+    [(ngModel)]="model.description"
+    #description="ngModel"
+  ></textarea>
+  <br />
+  <br />
+  <button type="submit" [disabled]="!imageAddForm.form.valid">
+    send element
+  </button>
+  <!-- <button [routerLink]="['../../view']">send</button> -->
+</form>

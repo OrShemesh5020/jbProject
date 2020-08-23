@@ -1,0 +1,33 @@
+@import '../styles.scss';
+
+.page {
+  // padding: 0 0 50px 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  // position: relative;
+  text-align: center;
+  // border: 2px solid black;
+  // background-image: linear-gradient(gray, white);
+  // background-color: $LIGHT_STEEL_BLUE;
+}
+
+main {
+  min-height: 500px;
+  margin: 50px auto;
+  max-width: 1200px;
+  background-color: $WHITE;
+}
+
+footer {
+  background-color: #f4f4f4;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  border: 0 solid black;
+  border-top-width: 2px;
+  position: fixed;
+  bottom: 0px;
+}
+.mainWrapper {
+  overflow: auto;
+}

@@ -1,0 +1,15 @@
+<!-- <p>image-component works!</p> -->
+<div class="imageComponent">
+  <div class="image-wrapper">
+    <img src="{{ imageElement.src }}" />
+  </div>
+  <div class="text-block">
+    <div #titleDiv [ngClass]="{ red: true, blue: false }">
+      {{ imageElement.title }}
+    </div>
+    <div (click)="onClick(titleDiv)">{{ imageElement.description }}</div>
+    <div>
+      created on: {{ imageElement.createdOn | date: " EEEE MMMM yyyy" }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div>
+  <h1>add new image</h1>
+  <form (ngSubmit)="onSubmit()" #imageAddForm="ngForm" class="add-form">
+    <label>Title: </label>
+    <input
+      name="title"
+      required
+      minlength="3"
+      maxlength="15"
+      [(ngModel)]="model.title"
+      #title="ngModel"
+    />
+    <!-- FIXME: foo -->
+    <div *ngIf="!title.valid && title.touched && title.errors.required">
+      Title is required
+    </div>
+    <div *ngIf="!title.valid && title.errors.minlength">
+      Title must be with min length of 3 chars
+    </div>
+    <br />
+    <br />
+    <label>url: </label>
+    <input
+      name="url"
+      required
+      minlength="7"
+      maxlength="400"
+      [(ngModel)]="model.src"
+      #url="ngModel"
+    />
+    <div *ngIf="!url.valid && url.touched && url.errors.required">
+      Url is required
+    </div>
+    <div *ngIf="!url.valid && url.errors.minlength">
+      Url must be with min length of 7 chars
+    </div>
+    <br />
+    <br />
+    <label>description</label>
+    <textarea
+      name="description"
+      minlength="8"
+      maxlength="50"
+      [(ngModel)]="model.description"
+      #description="ngModel"
+    ></textarea>
+    <br />
+    <br />
+    <label>type</label><br />
+    <input
+      checked
+      type="radio"
+      name="type"
+      value="IMAGE"
+      [(ngModel)]="elementType"
+      #type="ngModel"
+    />image
+    <input
+      type="radio"
+      name="type"
+      value="VIDEO"
+      [(ngModel)]="elementType"
+      #type="ngModel"
+    />video
+    <button type="submit" [disabled]="!imageAddForm.form.valid">
+      add element
+    </button>
+  </form>
+</div>
+<div class="preview-element">
+  <app-preview-image
+    *ngIf="model.src && elementType === 'IMAGE'"
+    [imageElement]="model"
+  ></app-preview-image>
+  <app-preview-video
+    *ngIf="model.src && elementType === 'VIDEO'"
+    [videoElement]="model"
+  ></app-preview-video>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<!-- <button [routerLink]="['../view']">send</button> -->

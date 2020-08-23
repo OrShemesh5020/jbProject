@@ -1,0 +1,41 @@
+.Form{
+  float: left;
+  margin-bottom: 30px;
+}
+.formatfile{
+  padding: 10px;
+  margin: 10px;
+}
+.formatfile span{
+  width: 120px;
+  float: left;
+}
+.tableFream {
+  clear: both;
+  margin-right: 10px;
+  margin-left: 10px;
+  // margin: auto;
+  padding: 10px;
+  border: black solid 1px;
+  width: 75%;
+}
+select {
+  float: left;
+}
+.totalAvg{
+  float: left;
+  font-size: large;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: black solid 1px;
+}
+th,
+td {
+  padding: 10px;
+}

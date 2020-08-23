@@ -1,0 +1,27 @@
+<div>
+  <input #nameValue placeholder="enter a name" />
+  <button (click)="addName(nameValue.value); nameValue.value = ''">
+    add name
+  </button>
+  <ul>
+    <li *ngFor="let name of nameList">{{ name }}</li>
+  </ul>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <ul>
+    <li *ngFor="let person of infoArr">
+      <div><label> id:</label> {{ person.id }}</div>
+      <div><label>name:</label> {{ person.name }}</div>
+      <div><label>gender:</label> {{ person.gender }}</div>
+      <div><label>favoriteFruit:</label> {{ person.favoriteFruit }}</div>
+      <br/>
+    </li>
+  </ul>
+</div>

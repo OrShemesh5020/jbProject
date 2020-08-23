@@ -1,0 +1,23 @@
+<div *ngIf="previewGalleryElement" class="preview">
+  <button (click)="onClosePreview()" class="close-button">{{ "X" }}</button>
+  <button (click)="moveBack()" class="preview-button back-button">
+    {{ "<" }}
+  </button>
+  <!-- <div class="preview-test"> -->
+  <app-preview-image
+    *ngIf="
+      previewGalleryElement.galleryElementType === galleryElementType.IMAGE
+    "
+    [imageElement]="previewGalleryElement"
+  ></app-preview-image>
+  <!-- </div> -->
+  <app-preview-video
+    *ngIf="
+      previewGalleryElement.galleryElementType === galleryElementType.VIDEO
+    "
+    [videoElement]="previewGalleryElement"
+  ></app-preview-video>
+  <button (click)="moveForward()" class="preview-button forward-button">
+    {{ ">" }}
+  </button>
+</div>

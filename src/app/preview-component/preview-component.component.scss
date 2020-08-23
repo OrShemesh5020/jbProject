@@ -1,0 +1,63 @@
+.preview {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+
+  img,
+  video {
+    position: fixed;
+    top: 0;
+    height: auto;
+    max-height: 90vh;
+    max-width: 80vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+  }
+
+  button {
+    font-family: "Nanum Gothic", sans-serif;
+    position: fixed;
+    background-color: unset;
+    font-size: 2em;
+    font-weight: 900;
+    color: white;
+    border: unset;
+    outline: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      font-size: 2.2em;
+    }
+
+    &.preview-button {
+      height: 60vh;
+      margin: auto;
+      bottom: 0;
+      top: 0;
+      // transition: step-end 2s;
+    }
+
+    &.back-button {
+      left: 5%;
+      // width: 7%;
+    }
+
+    &.forward-button {
+      right: 5%;
+      // width: 7%;
+    }
+
+    &.close-button {
+      right: 5%;
+      top: 5%;
+    }
+  }
+}

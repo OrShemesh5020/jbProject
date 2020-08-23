@@ -1,0 +1,68 @@
+<!-- <h1>Welcome to our {{title}}</h1>
+<p>Home- section</p>
+<img [src] = 'imgSrc' (click)="onImageClick()"/> -->
+<button (click)="dummyService.printMe()">print me home</button>
+<a [routerLink]="['/about']">about</a>
+<a [routerLink]="['/printouterparam', 'or']">print my name</a>
+<input #someInput type="text" [(ngModel)]="numImages" />
+<br />
+{{ numImages }}
+<br />
+<br />
+<br />
+<button (click)="setNum(someInput)">reset to "new value"</button>
+
+<app-image-component *ngFor="let image of images"></app-image-component>
+
+<div *ngFor="let row of multiplicationTable">
+  <span
+    *ngFor="let value of row"
+    style="
+      margin: 5px;
+      text-align: center;
+      display: inline-block;
+      width: 20px;
+      border: black solid 1px;
+    "
+  >
+    {{ value }}
+  </span>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<app-people-info></app-people-info>
+<br />
+<br />
+<br />
+<br />
+
+<app-pipe-example></app-pipe-example>
+<br />
+<br />
+<br />
+<br />
+<app-students-component></app-students-component>
+<br />
+<br />
+<br />
+<br />
+<app-movies></app-movies>
+<br />
+<br />
+<br />
+<br />
+<app-input-output-example></app-input-output-example>
+<br />
+<br />
+<br />
+<br />
+<app-name-selector></app-name-selector>
+<br />
+<br />
+<br />
+<br />
+<!-- <app-gallery-component></app-gallery-component> -->
+<router-outlet></router-outlet>

@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+// img {
+//   width: fit-content;
+//   height: fit-content;
+// }
+
+$RICH_BLACK: #000505;
+$ENGLISH_VIOLET: #3b3355;
+$DARK_BLUE_GRAY: #5D5D81;
+$LIGHT_STEEL_BLUE: #BFCDE0;
+$WHITE: #FEFCFD;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Nanum Gothic';
+  background-color: $LIGHT_STEEL_BLUE;
+
+  a {
+    text-decoration: none;
+  }
+}
+
