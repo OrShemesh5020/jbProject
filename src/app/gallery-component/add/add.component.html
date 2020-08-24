@@ -10,7 +10,6 @@
       [(ngModel)]="model.title"
       #title="ngModel"
     />
-    <!-- FIXME: foo -->
     <div *ngIf="!title.valid && title.touched && title.errors.required">
       Title is required
     </div>
@@ -67,7 +66,7 @@
     </button>
   </form>
 </div>
-<div class="preview-element">
+<!-- <div class="preview-element" *ngIf="model.src && elementType" > -->
   <app-preview-image
     *ngIf="model.src && elementType === 'IMAGE'"
     [imageElement]="model"
@@ -76,7 +75,7 @@
     *ngIf="model.src && elementType === 'VIDEO'"
     [videoElement]="model"
   ></app-preview-video>
-</div>
+<!-- </div> -->
 <br />
 <br />
 <br />

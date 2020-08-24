@@ -22,7 +22,6 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    // TODO: fix this
     this.model.galleryElementType = GalleryElementType[this.elementType];
     // console.log(this.elementType);
     // console.log(this.model.galleryElementType);
