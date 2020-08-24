@@ -95,7 +95,7 @@ export class GalleryService {
       ? (this.galleryElements = this.galleryElements.filter(
           (galleryElement) => this.galleryElements[index] !== galleryElement
         ))
-      : console.log('null');
+      : console.log('nullll');
   }
 
   // if (index < this.newGalleryElements.length && index > -1) {

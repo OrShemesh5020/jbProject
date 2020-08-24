@@ -1,3 +1,13 @@
-p{
-  text-align: center;
+footer {
+  background-color: #f4f4f4;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  border: 0 solid black;
+  border-top-width: 2px;
+  bottom: 0px;
+
+  p {
+    text-align: center;
+  }
 }
