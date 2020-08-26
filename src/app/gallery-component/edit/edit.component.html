@@ -1,34 +1,95 @@
 <h1>update element</h1>
-<form (ngSubmit)="onSubmit()" #imageAddForm="ngForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="editForm">
   <label>Title: </label>
-  <input
-    name="title"
-    required
-    minlength="3"
-    maxlength="15"
-    [(ngModel)]="model.title"
-    #title="ngModel"
-  />
-  <div *ngIf="!title.valid && title.touched && title.errors.required">
+  <input type="text" formControlName="title" />
+  <div
+    *ngIf="
+      !editForm.controls['title'].valid &&
+      editForm.controls['title'].touched &&
+      editForm.controls['title'].errors.required
+    "
+  >
     Title is required
   </div>
-  <div *ngIf="!title.valid && title.errors.minlength">
+  <div
+    *ngIf="
+      !editForm.controls['title'].valid &&
+      editForm.controls['title'].touched &&
+      editForm.controls['title'].errors.minlength
+    "
+  >
     Title must be with min length of 3 chars
+  </div>
+  <div
+    *ngIf="
+      !editForm.controls['title'].valid &&
+      editForm.controls['title'].touched &&
+      editForm.controls['title'].errors.maxlength
+    "
+  >
+    The title must be less than 15 characters long
+  </div>
+  <label>Url: </label>
+  <input type="text" formControlName="src" />
+  <div
+    *ngIf="
+      !editForm.controls['src'].valid &&
+      editForm.controls['src'].touched &&
+      editForm.controls['src'].errors.required
+    "
+  >
+    Url is required
+  </div>
+  <div
+    *ngIf="
+      !editForm.controls['src'].valid &&
+      editForm.controls['src'].touched &&
+      editForm.controls['src'].errors.minlength
+    "
+  >
+    Url must be with min length of 7 chars
+  </div>
+  <div
+    *ngIf="
+      !editForm.controls['src'].valid &&
+      editForm.controls['src'].touched &&
+      editForm.controls['src'].errors.maxlength
+    "
+  >
+    The url must be less than 400 characters long
+  </div>
+  <div
+    *ngIf="
+      !editForm.controls['src'].valid &&
+      editForm.controls['src'].touched &&
+      editForm.controls['src'].errors.urlPrefix
+    "
+  >
+    http
   </div>
   <br />
   <br />
   <label>description</label>
-  <textarea
-    name="description"
-    minlength="8"
-    maxlength="50"
-    [(ngModel)]="model.description"
-    #description="ngModel"
-  ></textarea>
+  <textarea formControlName="description"></textarea>
+  <div
+    *ngIf="
+      !editForm.controls['description'].valid &&
+      editForm.controls['description'].errors.minlength
+    "
+  >
+    The description length must be greater than 2 characters
+  </div>
+  <div
+    *ngIf="
+      !editForm.controls['description'].valid &&
+      editForm.controls['description'].errors.maxlength
+    "
+  >
+    The title must be less than 400 characters long
+  </div>
   <br />
   <br />
-  <button type="submit" [disabled]="!imageAddForm.form.valid">
+  <button type="submit" [disabled]="!editForm.valid">
     send element
   </button>
-  <!-- <button [routerLink]="['../../view']">send</button> -->
 </form>

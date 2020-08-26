@@ -45,28 +45,37 @@
     ></textarea>
     <br />
     <br />
-    <label>type</label><br />
-    <input
-      checked
-      type="radio"
-      name="type"
-      value="IMAGE"
-      [(ngModel)]="elementType"
-      #type="ngModel"
-    />image
-    <input
-      type="radio"
-      name="type"
-      value="VIDEO"
-      [(ngModel)]="elementType"
-      #type="ngModel"
-    />video
+    <label>type</label>
+    <div class="radio-wrapper">
+      <div class="radio">
+        <input
+          required
+          type="radio"
+          name="type"
+          value="IMAGE"
+          [(ngModel)]="elementType"
+          #type="ngModel"
+        />
+        <label>image</label>
+      </div>
+      <div class="radio">
+        <input
+          required
+          type="radio"
+          name="type"
+          value="VIDEO"
+          [(ngModel)]="elementType"
+          #type="ngModel"
+        />
+        <label>video</label>
+      </div>
+    </div>
     <button type="submit" [disabled]="!imageAddForm.form.valid">
       add element
     </button>
   </form>
 </div>
-<!-- <div class="preview-element" *ngIf="model.src && elementType" > -->
+<div class="preview-element" *ngIf="model.src && elementType">
   <app-preview-image
     *ngIf="model.src && elementType === 'IMAGE'"
     [imageElement]="model"
@@ -75,7 +84,7 @@
     *ngIf="model.src && elementType === 'VIDEO'"
     [videoElement]="model"
   ></app-preview-video>
-<!-- </div> -->
+</div>
 <br />
 <br />
 <br />
