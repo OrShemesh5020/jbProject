@@ -1,5 +1,5 @@
 .galleryComponent {
-  width: 90vw;
+  width: 75vw;
   margin: 0 auto;
   display: grid;
 
@@ -11,6 +11,13 @@
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+
+    button{
+      position: relative;
+      // width: fit-content;
+      // float: right;
+
+    }
   }
 
   // &::nth-child(2) {

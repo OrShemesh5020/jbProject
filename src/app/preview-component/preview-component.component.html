@@ -5,16 +5,12 @@
   </button>
   <!-- <div class="preview-test"> -->
   <app-preview-image
-    *ngIf="
-      previewGalleryElement.galleryElementType === galleryElementType.IMAGE
-    "
+    *ngIf="previewGalleryElement.type === 'IMAGE'"
     [imageElement]="previewGalleryElement"
   ></app-preview-image>
   <!-- </div> -->
   <app-preview-video
-    *ngIf="
-      previewGalleryElement.galleryElementType === galleryElementType.VIDEO
-    "
+    *ngIf="previewGalleryElement.type === 'VIDEO'"
     [videoElement]="previewGalleryElement"
   ></app-preview-video>
   <button (click)="moveForward()" class="preview-button forward-button">

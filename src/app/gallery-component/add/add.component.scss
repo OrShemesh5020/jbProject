@@ -3,32 +3,48 @@
   flex-direction: column;
   width: 20%;
   margin: 0 auto;
+
+  .radio-wrapper {
+    .radio {
+      text-align: left;
+      width: 100%;
+      input {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 .preview-element {
-  background-color: rgba(0, 0, 0, 0.9);
+  // background-color: rgba(0, 0, 0, 0.6);
+  // display: flex;
+  margin: 20px auto;
   width: 20vw;
-  height: 20vh;
+  // height: 110px;
   top: 0;
   // z-index: 1;
   // display: table;
   // table-layout: fixed;
   // justify-content: center;
-}
-img, video {
-  // top: 0;
-  // border: solid black 10px;
-  // // height: auto;
-  // height: max-content;
-  // width: max-content;
-  // // margin: auto;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  // // z-index: 1;
-  margin-top: 20px;
-  max-width: 200px;
-  width: inherit;
-  height: inherit;
+
+  img,
+  video {
+    // top: 0;
+    // border: solid black 10px;
+    // // height: auto;
+    // height: max-content;
+    // width: max-content;
+    // // margin: auto;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    // // z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    max-width: 100%;
+    max-height: 100%;
+    // width: inherit;
+    // height: inherit;
+  }
 }

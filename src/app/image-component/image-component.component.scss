@@ -9,7 +9,10 @@
     max-height: 100%;
     max-width: 100%;
   }
-
+  button{
+    position: relative;
+    z-index: 1;
+  }
   img {
     position: relative;
     display: flex;
@@ -18,6 +21,7 @@
     right: 0;
     top: -20%;
     width: 250%;
+    z-index: 0;
   }
   // &:hover {
   //   $displaty: inline;

@@ -10,4 +10,5 @@ export class Layout {
 export enum ComponentType {
   HEADER,
   GALLERY,
+  Exercises,
 }

@@ -18,10 +18,16 @@ export class EditComponent implements OnInit {
     private galleryService: GalleryService,
     private routed: Router,
     private formBuilder: FormBuilder
-  ) {
+  ) {}
+
+  ngOnInit(): void {
+    this.activated.params.subscribe(
+      (params) => (this.model = this.galleryService.getElement(params.id))
+    );
+    console.log(this.model);
     this.editForm = this.formBuilder.group({
       title: [
-        '',
+        this.model.title,
         [
           Validators.required,
           Validators.minLength(3),
@@ -29,7 +35,7 @@ export class EditComponent implements OnInit {
         ],
       ],
       description: [
-        '',
+        this.model.description,
         [
           Validators.required,
           Validators.minLength(3),
@@ -37,7 +43,7 @@ export class EditComponent implements OnInit {
         ],
       ],
       src: [
-        '',
+        this.model.src,
         [
           Validators.required,
           Validators.minLength(7),
@@ -47,17 +53,11 @@ export class EditComponent implements OnInit {
       ],
     });
   }
-
-  ngOnInit(): void {
-    this.activated.params.subscribe(
-      (params) => (this.model = this.galleryService.getElement(params.id))
-    );
-    // console.log(this.model);
-  }
   onSubmit(): void {
     // console.log(this.editForm);
     // console.log(this.editForm.value.title);
     this.editModel();
+    this.galleryService.updateElement(this.model);
     this.routed.navigate(['gallery/view']);
   }
   editModel(): void {

@@ -41,6 +41,7 @@ import { ViewComponent } from './view/view.component';
 import { GalleryNavBarComponent } from './gallery-nav-bar/gallery-nav-bar.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { ExeNavBarComponent } from './exercises/exe-nav-bar/exe-nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ExeNavBarComponent } from './exercises/exe-nav-bar/exe-nav-bar.componen
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

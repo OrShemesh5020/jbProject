@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GalleryService } from './../gallery.service';
 import { DummyService } from './../service/dummy.service';
 import {
@@ -18,9 +18,7 @@ export class ViewComponent implements OnInit {
   galleryElements: GalleryElement[];
 
   galleryElementType = GalleryElementType;
-  constructor(
-    private galleryService: GalleryService,
-  ) {}
+  constructor(private galleryService: GalleryService, private router: Router) {}
 
   ngOnInit(): void {
     // console.log('sdjvndsvljs');
@@ -30,8 +28,13 @@ export class ViewComponent implements OnInit {
 
   selectedElement(galleryElement: GalleryElement): void {
     this.selectedGalleryElement = galleryElement;
+    console.log(this.selectedGalleryElement);
   }
   closePreview(): void {
     this.selectedGalleryElement = null;
+  }
+  changeNavigation(galleryElement: GalleryElement): void {
+    this.selectedElement(galleryElement);
+    this.router.navigate(['gallery/edit', this.selectedGalleryElement.id - 1]);
   }
 }

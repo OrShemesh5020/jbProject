@@ -4,13 +4,13 @@ export class GalleryElement {
     public src?: string,
     public title?: string,
     public description?: string,
-    public createdOn?: Date,
-    public galleryElementType?: GalleryElementType
+    public createdOn?: string,
+    public type?: GalleryElementType
   ) {}
 }
 
 export enum GalleryElementType {
-  IMAGE,
-  VIDEO,
-  VIDEO_EMBEDED,
+  IMAGE = 'IMAGE',
+  VIDEO = 'VIDEO',
+  VIDEO_EMBEDED = 'VIDEO_EMBEDED',
 }

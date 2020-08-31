@@ -3,7 +3,13 @@ import {
   GalleryElement,
   GalleryElementType,
 } from './../gallery-component.model';
-import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +28,10 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    this.model.galleryElementType = GalleryElementType[this.elementType];
+    // this.model.galleryElementType = this.elementType;
+    console.log(this.elementType);
+    this.model.type = GalleryElementType[this.elementType];
+    console.log(this.model);
     // console.log(this.elementType);
     // console.log(this.model.galleryElementType);
     this.galleryService.addElement(this.model);

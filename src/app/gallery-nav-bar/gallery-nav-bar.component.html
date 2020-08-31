@@ -1,6 +1,5 @@
 <div class="navigation-bar">
-  <a [routerLink]="['view']">view</a>
-  <a [routerLink]="['add']">add</a>
-  <a [routerLink]="['edit/2']">edit</a>
-  <a [routerLink]="['delete/1']">delete</a>
+  <a *ngFor="let item of galleryLayoutMenu" [routerLink]="item.navigation">{{
+    item.title
+  }}</a>
 </div>
